@@ -1,11 +1,8 @@
-#![no_main]
-
 use leptos::{
-    component, create_effect, create_node_ref, create_rw_signal, mount_to_body,
+    component, create_effect, create_node_ref, create_rw_signal,
     view, IntoView, RwSignal, SignalGetUntracked, SignalWith,
 };
 use leptos::html::Canvas;
-use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 use plotters_canvas::CanvasBackend;
 use plotters::drawing::IntoDrawingArea;
@@ -65,8 +62,3 @@ pub fn App() -> impl IntoView {
     }
 }
 
-#[wasm_bindgen(start)]
-pub fn main() {
-    console_error_panic_hook::set_once();
-    mount_to_body(App);
-}
